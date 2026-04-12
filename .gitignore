@@ -1,0 +1,28 @@
+﻿# Environments
+venv/
+env/
+.env
+
+# Python / ML Models
+__pycache__/
+*.pyc
+*.pth
+*.pt
+
+# Node / React
+mantis_ui/node_modules/
+mantis_ui/dist/
+.npm/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Massive Datasets
+*.zip
+*.rar
+data/
+
+# Rogue Frontend Folders
+frontend/node_modules/
+frontend/dist/
