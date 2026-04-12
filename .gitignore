@@ -9,20 +9,18 @@ __pycache__/
 *.pth
 *.pt
 
+# Massive Datasets (Prevents the 100MB GitHub error)
+*.zip
+*.rar
+data/
+
 # Node / React
 mantis_ui/node_modules/
 mantis_ui/dist/
+frontend/node_modules/
+frontend/dist/
 .npm/
 
 # OS Files
 .DS_Store
 Thumbs.db
-
-# Massive Datasets
-*.zip
-*.rar
-data/
-
-# Rogue Frontend Folders
-frontend/node_modules/
-frontend/dist/
