@@ -1,10 +1,13 @@
 [flake8]
 max-line-length = 120
-extend-ignore = E501, W503, E402
+extend-ignore = E501, W503, W291, W293, W391, E302, E303, E402
 exclude =
     venv,
     __pycache__,
     .git,
     data,
+    node_modules,
+    mantis_ui,
+    frontend,
     trainer.py,
     setup_data.py

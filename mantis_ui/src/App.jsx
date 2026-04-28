@@ -276,7 +276,7 @@ function App() {
 
         recognitionRef.current.onend = () => {
           if (isMonitoringRef.current) {
-            try { recognitionRef.current.start() } catch(e) {}
+            try { recognitionRef.current.start() } catch { /* recognition restarts automatically */ }
           }
         }
 

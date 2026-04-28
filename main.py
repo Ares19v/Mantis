@@ -1,6 +1,5 @@
 import asyncio
 import numpy as np
-import torch
 import os
 from concurrent.futures import ThreadPoolExecutor
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
