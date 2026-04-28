@@ -1,26 +1,62 @@
-﻿# Environments
+# ============================================================
+#  Mantis Agent Assist — .gitignore
+# ============================================================
+
+# --- Secrets & Environment ---
+.env
+*.key
+*.pem
+
+# --- Python ---
 venv/
 env/
-.env
-
-# Python / ML Models
+.venv/
 __pycache__/
-*.pyc
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# --- ML Models & Datasets ---
 *.pth
 *.pt
-
-# Massive Datasets (Prevents the 100MB GitHub error)
+*.ckpt
+*.safetensors
+data/
 *.zip
 *.rar
-data/
+*.tar.gz
 
-# Node / React
+# --- HuggingFace cache (can be huge) ---
+.cache/
+
+# --- Node / React ---
 mantis_ui/node_modules/
 mantis_ui/dist/
+mantis_ui/.vite/
 frontend/node_modules/
 frontend/dist/
 .npm/
+*.tsbuildinfo
 
-# OS Files
+# --- Docker ---
+.docker/
+
+# --- OS ---
 .DS_Store
 Thumbs.db
+desktop.ini
+*.lnk
+
+# --- IDE ---
+.vscode/
+.idea/
+*.swp
+*.swo

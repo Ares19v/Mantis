@@ -1,9 +1,25 @@
-﻿fastapi>=0.104.0
+# ============================================================
+#  Mantis Agent Assist — Python Dependencies
+# ============================================================
+
+# --- Web Framework ---
+fastapi>=0.104.0
 uvicorn[standard]>=0.23.2
 websockets>=11.0.3
+pydantic>=2.4.2
+
+# --- LLM Client ---
 groq>=0.4.2
+python-dotenv>=1.0.0
+
+# --- Machine Learning (PyTorch) ---
 torch>=2.1.0
+transformers>=4.38.0
+
+# --- Audio Processing ---
 numpy>=1.26.0
 librosa>=0.10.1
-python-dotenv>=1.0.0
-pydantic>=2.4.2
+soundfile>=0.12.1
+
+# --- Training Utilities ---
+tqdm>=4.66.0

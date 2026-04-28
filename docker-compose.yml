@@ -1,0 +1,46 @@
+# ============================================================
+#  Mantis Agent Assist — Docker Compose
+# ============================================================
+#  Usage:
+#    docker compose up --build
+#
+#  The HuBERT model (~1.5 GB) downloads from HuggingFace on
+#  first boot and is cached in the `hf_cache` volume.
+# ============================================================
+
+services:
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mantis_backend
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - hf_cache:/root/.cache/huggingface
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/docs"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+  frontend:
+    build:
+      context: ./mantis_ui
+      dockerfile: Dockerfile
+    container_name: mantis_frontend
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+
+volumes:
+  hf_cache:
+    driver: local

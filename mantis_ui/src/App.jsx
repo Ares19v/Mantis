@@ -1,4 +1,4 @@
-﻿import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect } from 'react'
 
 function App() {
   const [emotion, setEmotion] = useState("WAITING...")
@@ -311,7 +311,8 @@ function App() {
     setEmotion("OFFLINE")
     setAction("SYSTEM HALTED")
 
-    const fullLog = transcriptLog.map(l => `${l.speaker}: ${l.text}`).join('\n')
+    const logSnapshot = [...transcriptLog]
+    const fullLog = logSnapshot.map(l => `${l.speaker}: ${l.text}`).join('\n')
     if (fullLog.trim().length > 10) {
       setIsSummarizing(true)
       fetch('http://localhost:8000/api/summarize', {
@@ -320,8 +321,8 @@ function App() {
         body: JSON.stringify({ text: fullLog })
       })
       .then(res => res.json())
-      .then(data => setSummaryData(data.summary))
-      .catch(() => setSummaryData("Error connecting to analytics engine."))
+      .then(data => { setSummaryData(data.summary); setIsSummarizing(false) })
+      .catch(() => { setSummaryData("Error connecting to analytics engine."); setIsSummarizing(false) })
     }
   }
 

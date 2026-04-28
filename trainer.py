@@ -1,4 +1,4 @@
-﻿import os
+import os
 import librosa
 import numpy as np
 import torch
@@ -44,7 +44,7 @@ def train():
             features = extract_features(path)
             X.append(features)
             y.append(emotion_label)
-        except Exception as e:
+        except Exception:
             continue
 
     # THE FIX: No .squeeze(1). Shape is now correctly (1440, 1, 40, 50)
