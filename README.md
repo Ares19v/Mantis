@@ -1,7 +1,7 @@
 # Mantis Agent Assist v2.0
 
 [![CI](https://github.com/Ares19v/Mantis/actions/workflows/ci.yml/badge.svg)](https://github.com/Ares19v/Mantis/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 [![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python&logoColor=white)](https://python.org)
 [![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)](https://react.dev)
 [![Groq](https://img.shields.io/badge/LLM-Groq%20LLaMA%203-orange)](https://console.groq.com)
@@ -178,6 +178,7 @@ python trainer.py
 
 ---
 
-## License
-
-[MIT](LICENSE) © 2026 Devansh Tyagi
+---
+<p align="center">
+  Made by Devansh Tyagi @ 2026
+</p>
