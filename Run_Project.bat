@@ -9,15 +9,6 @@ echo    Startup Sequence Initiated
 echo  ================================================================
 echo.
 
-:: --- Pre-flight: Virtual Environment ---
-if not exist "venv\Scripts\activate.bat" (
-    echo  [ERROR] Python virtual environment not found.
-    echo  [INFO]  Run INSTALL.bat first to set up dependencies.
-    echo.
-    pause
-    exit /b 1
-)
-
 :: --- Pre-flight: .env ---
 if not exist ".env" (
     echo  [WARN]  No .env file found.
@@ -35,10 +26,12 @@ if not exist "mantis_ui\node_modules\" (
 
 :: --- Launch Backend ---
 echo  [1/3] Starting FastAPI Backend  ^>  http://localhost:8000
+set "ACT_CMD="
+if exist "venv\Scripts\Activate.ps1" set "ACT_CMD=& '.\venv\Scripts\Activate.ps1'; "
 start "Mantis :: Backend" powershell -NoExit -Command ^
     "$host.ui.RawUI.WindowTitle = 'Mantis :: Backend'; " ^
     "Set-Location '%~dp0'; " ^
-    "& '.\venv\Scripts\Activate.ps1'; " ^
+    "%ACT_CMD%" ^
     "python main.py"
 
 :: --- Launch Frontend ---
@@ -60,5 +53,4 @@ echo  ================================================================
 echo.
 
 start "" "http://localhost:5173"
-
 exit
