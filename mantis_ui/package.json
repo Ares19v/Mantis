@@ -27,5 +27,6 @@
     "postcss": "^8.5.9",
     "tailwindcss": "^4.2.2",
     "vite": "^8.0.4"
-  }
+  },
+  "description": "Real-time customer service agent assist platform combining HuBERT acoustic emotion models and LLaMA 3 tactical guidance."
 }
