@@ -179,9 +179,7 @@ python trainer.py
 ---
 
 ---
-<p align="center">
-  Made by Devansh Tyagi @ 2026
-</p>
+
 
 ## 🤗 Model on Hugging Face
 
@@ -193,3 +191,7 @@ The trained model is available on Hugging Face: [devanshty/Mantis](https://huggi
 from huggingface_hub import hf_hub_download
 model_path = hf_hub_download(repo_id='devanshty/Mantis', filename='emotion_model.pth')
 ```
+
+---
+
+© 2025 Devansh Tyagi (Ares19v). All Rights Reserved.
